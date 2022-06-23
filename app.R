@@ -213,19 +213,19 @@ server<-function(input, output, session){
     })
     output$vars <- renderUI({
         if(input$example=="Sex as a Cause of Pregnancy"){
-            radioButtons("var","Complete conditional probability table(i.e., the row sum of each row is one) for",selected="sex",
+            radioButtons("var","Complete the probability table(i.e., the row sum of each row is one) for",selected="sex",
                          list("Sex"="sex","Pregnancy"="pregnancy") # Example 1
             )
         } 
         
         else if(input$example=="Color of Children's Shoes"){
-            radioButtons("var","Complete conditional probability table(i.e., the row sum of each row is one) for",selected="sex",
+            radioButtons("var","Complete the probability table(i.e., the row sum of each row is one) for",selected="sex",
                          list("Sex"="sex","Color"="color") # Example 2
             )
         }
         
         else if(input$example=="Efficacy of Medication Treatment"){
-            radioButtons("var","Complete conditional probability table(i.e., the row sum of each row is one) for",selected="sex",
+            radioButtons("var","Complete the probability table(i.e., the row sum of each row is one) for",selected="sex",
                          list("Sex"="sex","Treatment"="treatment", "Recovery"="recovery") # Example 3
             )
         }
