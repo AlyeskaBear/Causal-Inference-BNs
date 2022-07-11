@@ -1,7 +1,7 @@
 # Learning Causal Inference Through Examples
 This Shiny application is developed to help students learn basic concepts of causal inference through the five examples presented in our paper 
 *Introducing Causal Inference Using Bayesian Networks and *do*-Calculus*. 
-## Install and Run the Application 
+## Run the Application 
 ### Run on [ShinyApps.io](https://www.shinyapps.io)
 We have deployed this app to [https://alyeskabear.shinyapps.io/BNandCausalinference/](https://alyeskabear.shinyapps.io/BNandCausalinference/). So, you can run it as a web application without installing anything locally.
 ### Run on your local machine
