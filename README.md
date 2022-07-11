@@ -32,7 +32,7 @@ Meanwhile, its DAG is shown in the DAG tab on the right
 
 ![image](https://user-images.githubusercontent.com/44960049/178309447-98214be3-8b4f-4734-9a70-cd1a0dcae762.png)
 
-**Step 2**: In the third panel on the left, select a variable and complete its conditional probability table in the ```Prob. Table/Data File``` tab.
+**Step 2**: In the third panel on the left, select a variable and complete its probability table in the ```Prob. Table/Data File``` tab.
 
 ![image](https://user-images.githubusercontent.com/44960049/178310090-a0f56a09-b359-471d-ae53-a14dbcdd2d61.png)
 
