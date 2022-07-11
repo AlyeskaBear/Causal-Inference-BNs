@@ -8,7 +8,7 @@ We have deployed this app to [https://alyeskabear.shinyapps.io/BNandCausalinfere
 If you prefer to run the app locally, you need to first install some prerequisite R packages. 
 ```R
 install.packages(c("BiocManager",
-                   "DT"
+                   "DT",
                    "bnlearn",
                    "gRain",
                    "arules",
