@@ -23,7 +23,7 @@ Then, you can run the app
 ```R
 library(shiny); runGitHub("Causal-Inference-BNs", "AlyeskaBear")
 ```
-### Use the Application 
+## Use the Application 
 **Step 1**: In the top panel on the left, select one of the first four examples. For instance, select Example 4 *Should I switch?* and the example’s BN model structure will show in the panel below.
 
 ![image](https://user-images.githubusercontent.com/44960049/178309268-8b17f7b9-bef3-4df7-81d3-10f3bc0e5e45.png)
