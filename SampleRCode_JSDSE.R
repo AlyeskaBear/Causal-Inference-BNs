@@ -66,33 +66,33 @@ bn.fit.barchart(as.bn.fit(jSex.Female,including.evidence = TRUE)$Pregnancy, main
 
 
 
-#---------------------------Example 2: The Color of Children's Shoes---------------------------------------#
+#---------------------------Example 2: Color Preference by Culture---------------------------------------#
 # The Bayes Network model structure
-# P(Sex,Color)=P(Sex)P(Color|Sex)
-Ex2.DAG <- model2network('[Sex][Color|Sex]')
+# P(Sex,Culture)=P(Culture)P(Color|Culture)
+Ex2.DAG <- model2network('[Culture][Color|Culture]')
 graphviz.plot(Ex2.DAG)
 
-# Complete conditional probability table for the nodes of Sex and Color
+# Complete conditional probability table for the nodes of Culture and Color
 # specify different states of a node
-sex <- c("Boy","Girl")
+culture <- c("A","B")
 color<-c("Black","Blue", "Red" )
 
 # assign probability values to different states
 # the Sex node 
 # parent node
-S <- array(dimnames = list(Sex = sex), dim = 2, c(50/100,50/100))
+S <- array(dimnames = list(Culture = culture), dim = 2, c(50/100,50/100))
 
 # the Color node 
 # child node <-- parent node
-C <- array(dimnames = list(Color=color, Sex = sex 
+C <- array(dimnames = list(Color=color, Culture = culture
 ), dim = c(3,2), c(25/50, 15/50, 10/50,
                    5/50, 10/50, 35/50))
 # Check the created probability tables
-S  # the Sex node 
+S  # the Culture node 
 C # the Color node 
 
 # feed the probability tables to the causal structure
-cpts <- list(Sex = S, Color = C)
+cpts <- list(Culture = S, Color = C)
 Ex2.fit = custom.fit(Ex2.DAG, cpts)
 graphviz.chart(Ex2.fit, type = "barprob", scale = c(1.25, 2), bar.col = "green", strip.bg = "lightgray")
 Ex2.fit$Sex
@@ -102,15 +102,15 @@ Ex2.fit$Color
 junction<-compile(as.grain(Ex2.fit))
 
 # Node intervention and manipulation Intervene on the nodes 
-# 1. fix the Sex node at the state "Male"
-jSex.Boy<-setEvidence(junction, nodes="Sex", states="Boy")
-querygrain(jSex.Boy, nodes="Color")$Color
-bn.fit.barchart(as.bn.fit(jSex.Boy,including.evidence = TRUE)$Color, main="Color", xlab="Posterintervention Distribution")
+# 1. fix the Culture node at the state "A"
+jCulture.A<-setEvidence(junction, nodes="Culture", states="A")
+querygrain(jCulture.A, nodes="Color")$Color
+bn.fit.barchart(as.bn.fit(jCulture.A,including.evidence = TRUE)$Color, main="Color", xlab="Posterintervention Distribution")
 
-# 2. fix the Sex node at the state "Female"
-jSex.Girl<-setEvidence(junction, nodes="Sex", states="Girl")
-querygrain(jSex.Girl, nodes="Color")$Color
-bn.fit.barchart(as.bn.fit(jSex.Girl,including.evidence = TRUE)$Color, main="Color", xlab="Posterintervention Distribution")
+# 2. fix the Culture node at the state "B"
+jCulture.B<-setEvidence(junction, nodes="Culture", states="B")
+querygrain(jCulture.B, nodes="Color")$Color
+bn.fit.barchart(as.bn.fit(jCulture.B,including.evidence = TRUE)$Color, main="Color", xlab="Posterintervention Distribution")
 #-------------------------------------------------------------------------------------------------------------#
 
 
@@ -118,19 +118,19 @@ bn.fit.barchart(as.bn.fit(jSex.Girl,including.evidence = TRUE)$Color, main="Colo
 #---------------------------Example 3: Efficacy of Medication Treatment---------------------------------------#
 # The Bayes Network model structure
 # P(Treatment, Sex, Recovery)=P(Recovery|Sex,Treatment)P(Treatment)P(Sex)
-Ex3.DAG <- model2network('[Sex][Treatment][Recovery|Sex:Treatment]')
+Ex3.DAG <- model2network('[Hospital][Treatment][Recovery|Hospital:Treatment]')
 graphviz.plot(Ex3.DAG)
 
 # Complete conditional probability table for the nodes of Recovery, Treatment and Sex
 # specify different states of a node
 recovery<- c("Yes","No")
 treatment<-c("Medication","Placebo")
-sex<-c("Male","Female")
+hospital<-c("A","B")
 
 # assign probability values to different states
 # the Sex node
                             # parent node
-S <- array(dimnames = list(Sex = sex # Male=18+12+7+3=40; Female=2+8+9+21=40
+S <- array(dimnames = list(Hospital = hospital # A=18+12+7+3=40; B=2+8+9+21=40
 ), dim = 2, c(40/80,40/80))
 
 # the Treatment node
@@ -143,16 +143,16 @@ T <- array(dimnames = list(Treatment=treatment
 
 # the Recovery node
                               # child node <-- parent node, parent node
-R <- array(dimnames = list(Recovery=recovery, Treatment=treatment, Sex = sex
-                              # Yes Medication Male=18
-                              # No Medication Male=12
-                              # Yes Placebo Male=7
-                              # No Placebo Male=3
+R <- array(dimnames = list(Recovery=recovery, Treatment=treatment, Hospital = hospital
+                              # Yes Medication A=18
+                              # No Medication A=12
+                              # Yes Placebo A=7
+                              # No Placebo A=3
                               
-                              # Yes Medication Female=2
-                              # No Medication Female=8 
-                              # Yes Placebo Female=9
-                              # No Placebo Female=21 
+                              # Yes Medication B=2
+                              # No Medication B=8 
+                              # Yes Placebo B=9
+                              # No Placebo B=21 
                               
 ), dim = c(2,2,2), c(18/30, 12/30,
                      7/10, 3/10,
@@ -160,12 +160,12 @@ R <- array(dimnames = list(Recovery=recovery, Treatment=treatment, Sex = sex
                      9/30, 21/30))
 
 # Check the created probability tables
-S   # the Sex node
+S   # the Hospital node
 T  # the Treatment node
 R # the Recovery node
 
 # feed the probability tables to the causal structure
-cpts <- list(Recovery = R, Treatment = T, Sex=S)
+cpts <- list(Recovery = R, Treatment = T, Hospital=S)
 Ex3.fit = custom.fit(Ex3.DAG, cpts)
 graphviz.chart(Ex3.fit,type = "barprob", scale = c(1.25, 2), bar.col = "green", strip.bg = "lightgray")
 Ex3.fit$Recovery
