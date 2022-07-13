@@ -4,7 +4,7 @@ This Shiny application is developed to help students learn basic concepts of cau
 ## Install and Run the Application 
 ### Run on [ShinyApps.io](https://www.shinyapps.io)
 We have deployed this app to [https://alyeskabear.shinyapps.io/BNandCausalinference/](https://alyeskabear.shinyapps.io/BNandCausalinference/). So, you can run it as a web application without installing anything locally.
-### Run on your local machine
+### Install and Run on your local machine
 If you prefer to run the app locally, you need to first install some prerequisite R packages. 
 ```R
 install.packages(c("BiocManager",
