@@ -24,7 +24,7 @@ Then, you can run the app
 library(shiny); runGitHub("Causal-Inference-BNs", "AlyeskaBear")
 ```
 ## Use the Application 
-**Step 1**: In the top panel on the left, select one of the first four examples. For instance, select Example 4 *Color Preference by Culture* and the example’s BN model structure will show in the panel below.
+**Step 1**: In the top panel on the left, select one of the first four examples. For instance, select Example 2 *Color Preference by Culture* and the example’s BN model structure will show in the panel below.
 
 ![image](https://user-images.githubusercontent.com/44960049/178742721-e73a0a56-15e1-4b77-9d00-c1dde3170e86.png)
 
