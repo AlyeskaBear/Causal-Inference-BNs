@@ -1,4 +1,4 @@
-                   Academic Free License ("AFL") v. 3.0  TEST
+Academic Free License ("AFL") v. 3.0
 
 This Academic Free License (the "License") applies to any original work of
 authorship (the "Original Work") whose owner (the "Licensor") has placed the
@@ -11,17 +11,17 @@ Licensed under the Academic Free License version 3.0
 non-exclusive, sub-licensable license, for the duration of the copyright, to do
 the following:
 
-  a) to reproduce the Original Work in copies;
+      a) to reproduce the Original Work in copies;
 
-  b) to prepare derivative works ("Derivative Works") based upon the Original
-     Work;
+      b) to prepare derivative works ("Derivative Works") based upon the Original
+         Work;
 
-  c) to distribute copies of the Original Work and Derivative Works to the
-     public;
+      c) to distribute copies of the Original Work and Derivative Works to the
+         public;
 
-  d) to perform the Original Work publicly; and
+      d) to perform the Original Work publicly; and
 
-  e) to display the Original Work publicly.
+      e) to display the Original Work publicly.
 
 2) Grant of Patent License. Licensor grants You a world-wide, royalty-free,
 non-exclusive, sub-licensable license, under patent claims owned or controlled
